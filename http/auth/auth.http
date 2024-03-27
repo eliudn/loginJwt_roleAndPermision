@@ -1,0 +1,56 @@
+###
+GET {{URL}}/people
+Content-Type: application/json
+Authorization: {{TOKEN}}
+Authentication: {{JWT}}
+
+###
+POST {{URL}}/auth/logout
+Content-Type: application/json
+Authorization: {{TOKEN}}
+Authentication: {{JWT}}
+
+###
+POST {{URL}}/auth/singup
+Content-Type: application/json
+Authorization: {{TOKEN}}
+
+{
+    "nick":"nickprueva3",
+    "name":"eliud",
+    "last-name":"niebles",
+    "nit":"10222223",
+    "address":"address prueba",
+    "date_of_birth":"1990/07/20",
+    "email":"eliud3@eliud.com",
+    "password":"password"
+}
+
+###
+POST {{URL}}/auth/login
+Content-Type: application/json
+Authorization: {{TOKEN}}
+
+{
+    "email":"admin",
+    "password":"password"
+
+}
+
+###
+POST {{URL}}/auth/test
+Content-Type: application/json
+Authorization: {{TOKEN}}
+
+{
+ "user_id":1,
+ "token":"token_test"
+}
+
+--{%
+local body = context.json_decode(context.result.body)
+-- local file = io.open("./.env")
+-- file:write("JWT_TOKEN="..body.message.jwt)
+-- file:close()
+context.set_env("JWT_TOKEN","prueba")
+--%}

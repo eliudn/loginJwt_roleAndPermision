@@ -1,0 +1,47 @@
+
+* login
+  - (x) realizar el login
+  - (x) realizar logueo y devolver un toquen de autentificacion JWT
+
+* Registro de usuario (singUp)
+  - (x) registrar el usuario
+  - (x) registrar el usuarion y devolver un token de autentificacion JWT.
+
+  - (x)validar que que el token de validacion me permita ingresar a ruta protegida por la el autentificacion
+
+* cierre de session o loguot,
+  -- (x) recibir  un token y inavilitarlo
+  -- (x)crear migracion
+        token
+        user_id
+        invalid token at
+        location
+        timestamps
+  -- (x)registra el token
+  -- (x)validar que el usuario sea propietario del token
+  -- (x)invalidar token
+  -- (?) hay que tener un job para revisar si el token a expirado
+  -- (?) el proceso de logout  puede desactivar todos los token activos
+* Busque y validacion de token
+  - (x) busca y validacion del token
+  - (x) validacion que el tooken consultado pertenesca al usuario que lo consulto
+
+* Logout
+  - (x) al momento de loguiarse se debe registrar el token y el usuario
+  - (x) Modificar middelware de auhtentificacion  para que valide el token por base de datos y validar que no se encuentre inativo
+  - (x) crear la ruta de logout
+
+* Roles y permisos <solo aquellos con el rol o el permiso adecuado puede realizar las acciones>
+  - ( ) crear rol
+  - ( ) asignar permisos a un  rol
+  - ( ) asignar rol a un usuario
+  - ( ) asiganr permisos a un usuario
+  - ( ) listar perminsos no asignado a un usuario
+  - ( ) listar todo los perminsos
+  - ( ) listar todos los roles
+  - ( ) listar todos loss perminsos de un usuario
+  - ( ) listar todos loss roles de un usuario
+  - ( ) listar su rol (solo muestra el rol del el usuario que lo consulta no nesesita permiso)
+  - ( ) listar su permiso (solo muestra el rol del el usuario que lo consulta no nesesita permiso)
+
+  - ( ) validar que las rutas con los protegidas por el rol y permisos solo puedan se visitadas por los usuario con cullos roles y permisos
